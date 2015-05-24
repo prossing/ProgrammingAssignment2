@@ -38,13 +38,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-        inverse <- x$get_inverse() ## Return what is stored in the matrix objects inverse variable.
+        inverse <- x$get_inverse() ## Returns what is stored in the matrix objects inverse variable.
         if(!is.null(inverse)) { 
             messange("Getting cached data")
             return(inverse)    ## This is the exit point of the function if the if statement is true, code bellow will be skipped.
         }
-        data <- x$get()        # Matrix is returned from matrix object.
+        data <- x$get()        ## Matrix is returned from matrix object.
         inverse <- solve(data, ...) ## "..." argument can be provided.
         x$set_inverse(inverse) ## Result is set in matrix object 
-        inverse                ## aswell as returned.
+        inverse                ## and returned.
 }
